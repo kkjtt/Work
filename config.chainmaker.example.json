@@ -1,0 +1,29 @@
+{
+  "mode": "chainmaker",
+  "sdkPath": "C:/path/to/sdk-nodejs",
+  "chainId": "chain1",
+  "contractName": "nft_market",
+  "publicBaseUrl": "https://nft.example.org",
+  "timeoutMs": 30000,
+  "reviewers": ["issuer"],
+  "requireMintReview": false,
+  "requireIndependentReview": true,
+  "nodes": [
+    { "nodeAddr": "127.0.0.1:12301", "tlsEnable": true,
+      "ca": "C:/path/to/ca.crt", "hostName": "chainmaker.org" }
+  ],
+  "profiles": {
+    "issuer": { "address": "CHAINMAKER_ISSUER_ADDRESS", "apiKey": "CHANGE_ME_LONG_RANDOM_SECRET",
+      "orgId": "wx-org1.chainmaker.org", "signKey": "C:/path/to/issuer.sign.key",
+      "signCert": "C:/path/to/issuer.sign.crt", "tlsKey": "C:/path/to/issuer.tls.key",
+      "tlsCert": "C:/path/to/issuer.tls.crt" },
+    "alice": { "address": "CHAINMAKER_ALICE_ADDRESS", "apiKey": "CHANGE_ME_ALICE_SECRET",
+      "orgId": "wx-org1.chainmaker.org", "signKey": "C:/path/to/alice.sign.key",
+      "signCert": "C:/path/to/alice.sign.crt", "tlsKey": "C:/path/to/alice.tls.key",
+      "tlsCert": "C:/path/to/alice.tls.crt" },
+    "bob": { "address": "CHAINMAKER_BOB_ADDRESS", "apiKey": "CHANGE_ME_BOB_SECRET",
+      "orgId": "wx-org1.chainmaker.org", "signKey": "C:/path/to/bob.sign.key",
+      "signCert": "C:/path/to/bob.sign.crt", "tlsKey": "C:/path/to/bob.tls.key",
+      "tlsCert": "C:/path/to/bob.tls.crt" }
+  }
+}

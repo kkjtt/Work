@@ -141,4 +141,3 @@ config.*.json 配置示例
 ```
 
 参考：[长安链 Go 合约开发文档](https://docs.chainmaker.org.cn/v2.3.1/html/instructions/%E4%BD%BF%E7%94%A8Golang%E8%BF%9B%E8%A1%8C%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91.html)、[长安链 Node SDK 文档](https://docs.chainmaker.org.cn/v2.3.4/html/sdk/NodejsSDK%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.html)。
-

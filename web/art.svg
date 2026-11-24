@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="山海之间示例作品">
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#123d58"/><stop offset="1" stop-color="#81c7c2"/></linearGradient>
+    <linearGradient id="sea" x2="0" y2="1"><stop stop-color="#246b83"/><stop offset="1" stop-color="#0b3049"/></linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <circle cx="850" cy="222" r="94" fill="#f5dfaa" opacity=".92"/>
+  <path d="M0 528 192 343 320 460 532 235 783 505 918 385 1200 573V800H0Z" fill="#254b68"/>
+  <path d="M0 575 254 458 441 576 716 359 986 566 1200 462V800H0Z" fill="#173b58"/>
+  <path d="M0 580Q210 550 450 585T900 565T1200 595V800H0Z" fill="url(#sea)"/>
+  <path d="M0 630Q290 602 520 635T1200 624M0 700Q245 674 440 704T840 692T1200 710" fill="none" stroke="#9bd5cd" stroke-width="5" opacity=".38"/>
+  <path d="M470 266 532 235 595 304M676 406 716 359 758 414" fill="none" stroke="#d6e6df" stroke-width="8" opacity=".8"/>
+</svg>

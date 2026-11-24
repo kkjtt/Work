@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChainMaker NFT · 数字资产管理台</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">◇</span><span>ChainMaker<br><small>NFT STUDIO</small></span></div>
+      <div class="side-label">WORKSPACE</div>
+      <a href="#overview" class="nav active">▦ <span>总览</span></a>
+      <a href="#assets" class="nav">◈ <span>资产库</span></a>
+      <a href="#reviews" class="nav">◎ <span>发行审核</span></a>
+      <a href="#console" class="nav">⌘ <span>操作台</span></a>
+      <a href="#audit" class="nav">≡ <span>审计记录</span></a>
+      <div class="side-bottom"><span class="pulse"></span><span id="modeLabel">连接中…</span><small id="modeSubLabel">读取运行状态</small></div>
+    </aside>
+    <main>
+      <header class="topbar">
+        <div class="crumb">数字资产 / <strong>管理台</strong></div>
+        <div class="identity"><span class="identity-label">当前身份</span><select id="actor"></select><input id="apiKey" type="password" placeholder="账户 API 密钥" autocomplete="off"><span class="avatar">CM</span></div>
+      </header>
+      <div class="content">
+        <section id="overview" class="hero">
+          <div class="eyebrow"><span class="pulse"></span> DIGITAL ASSET LIFECYCLE</div>
+          <h1>数字资产，<em>全程可追溯。</em></h1>
+          <p>从作品登记到授权、流转、交易与销毁，保留可核验的状态与记录。</p>
+          <button class="primary" id="goMint">＋ 铸造新资产 <span>↗</span></button>
+          <div class="hero-atom" aria-hidden="true">
+            <div class="hero-glow"></div>
+            <div class="hero-orbit orbit-one"><span class="ion"></span></div>
+            <div class="hero-orbit orbit-two"><span class="ion"></span></div>
+            <div class="hero-orbit orbit-three"><span class="ion"></span></div>
+            <div class="hero-nucleus"><span>◇</span></div>
+            <span class="ion-spark spark-one"></span><span class="ion-spark spark-two"></span>
+          </div>
+        </section>
+        <section class="stats" aria-label="资产统计">
+          <article class="stat"><span>发行总量</span><strong id="totalCount">0</strong><small>累计铸造资产</small></article>
+          <article class="stat"><span>流通中</span><strong id="activeCount">0</strong><small>有效数字资产</small></article>
+          <article class="stat"><span>市场挂单</span><strong id="listedCount">0</strong><small>开放交易中</small></article>
+          <article class="stat"><span>我的测试积分</span><strong id="balanceCount">0</strong><small>仅用于演示交易</small></article>
+        </section>
+        <section id="assets" class="assets-section">
+          <div class="section-head"><div><div class="eyebrow dark">ASSET COLLECTION</div><h2>资产库</h2></div><div class="filters"><input id="search" placeholder="搜索 ID、名称或所有者"><select id="filter"><option value="all">全部状态</option><option value="listed">交易中</option><option value="active">流通中</option><option value="burned">已销毁</option><option value="mine">我持有的</option></select></div></div>
+          <div id="assetGrid" class="asset-grid"></div>
+          <p id="empty" class="empty" hidden>暂无匹配资产。可在操作台铸造第一件作品。</p>
+          <div class="pagination"><span id="pageInfo">0 项资产</span><div><button id="prevPage" class="secondary-button" type="button">上一页</button><button id="nextPage" class="secondary-button" type="button">下一页</button></div></div>
+        </section>
+        <section id="reviews" class="review-section">
+          <div class="section-head"><div><div class="eyebrow dark">ISSUANCE REVIEW</div><h2>发行审核</h2></div><button id="reviewRefresh" class="secondary-button" type="button">刷新申请</button></div>
+          <p class="review-intro">创作者可在铸造表单提交申请，发行方批准后将申请参数填入表单并铸造。审核记录保存在服务端；合约仍独立执行发行权限校验。</p>
+          <p id="reviewMessage" class="review-message" role="status"></p>
+          <div id="reviewList" class="review-list"></div>
+        </section>
+        <section id="console" class="console-section">
+          <div class="section-head"><div><div class="eyebrow dark">ACTION CONSOLE</div><h2>全生命周期操作台</h2></div></div>
+          <div class="console-grid">
+            <article class="panel form-panel">
+              <div class="panel-top"><span class="panel-icon">⌘</span><div><h3>发起资产操作</h3><p id="operationHint">正在确认运行模式</p></div></div>
+              <label>操作类型<select id="method"><option value="Mint">铸造资产</option><option value="Approve">单项授权 / 撤销</option><option value="SetApprovalForAll">全局授权 / 撤销</option><option value="Transfer">转移资产</option><option value="List">挂牌出售</option><option value="CancelListing">撤销挂牌</option><option value="Buy">购买资产</option><option value="Burn">销毁资产</option><option value="GrantCredits">发放测试积分</option></select></label>
+              <form id="actionForm"><div id="fields"></div><div class="form-actions"><button class="primary submit" type="submit">提交操作 <span>↗</span></button><button id="submitReview" class="secondary-button" type="button" hidden>提交发行审核</button></div></form>
+              <p id="formMessage" class="form-message" role="status"></p>
+            </article>
+            <article class="panel detail-panel">
+              <div class="panel-top"><span class="panel-icon outline">◈</span><div><h3>资产详情与验真</h3><p>选择资产卡片查看记录并核对作品文件</p></div></div>
+              <div id="detail" class="detail-empty">从资产库中选择一项资产</div>
+            </article>
+          </div>
+        </section>
+        <section id="audit" class="audit-section">
+          <div class="section-head"><div><div class="eyebrow dark">ASSET AUDIT TRAIL</div><h2>操作与交易审计</h2></div></div>
+          <div id="auditList" class="audit-list"></div>
+          <button id="auditMore" class="secondary-button audit-more" type="button" hidden>加载更多记录</button>
+        </section>
+        <footer>ChainMaker NFT Studio <span>·</span> 数字作品登记与流转系统</footer>
+      </div>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

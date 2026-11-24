@@ -1,0 +1,11 @@
+node_modules/
+data/
+config.chainmaker.json
+*.key
+*.pem
+*.crt
+.env
+.env.*
+*.7z
+contract/nft_market
+contract/nft_market.exe

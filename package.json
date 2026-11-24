@@ -1,0 +1,10 @@
+{
+  "name": "chainmaker-nft-lifecycle",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "node --test --test-isolation=none server/*.test.js"
+  },
+  "engines": { "node": ">=20" }
+}

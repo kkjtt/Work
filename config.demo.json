@@ -1,0 +1,12 @@
+{
+  "mode": "demo",
+  "dataFile": "data/demo-state.json",
+  "reviewers": ["issuer"],
+  "requireMintReview": false,
+  "requireIndependentReview": true,
+  "profiles": {
+    "issuer": { "address": "issuer", "apiKey": "demo-issuer" },
+    "alice": { "address": "alice", "apiKey": "demo-alice" },
+    "bob": { "address": "bob", "apiKey": "demo-bob" }
+  }
+}
